@@ -2,7 +2,7 @@
   <v-app>
     <v-main>
       <v-container>
-        <p class="text-h2 text-center">Viel Erfolg!</p>
+        <LogoBar/>
       </v-container>
     </v-main>
   </v-app>
@@ -11,12 +11,17 @@
 <script>
 // IMPORT
 import axios from 'axios';
+import LogoBar from '@/components/LogoBar.vue';
 
 export default {
   name: 'App',
   data: () => ({
     allCars: [],
   }),
+
+  components: {
+    LogoBar,
+  },
 
   methods: {
     async getCars() {
@@ -30,7 +35,7 @@ export default {
     },
   },
 
-  created () {
+  created() {
     this.getCars();
   },
 };
