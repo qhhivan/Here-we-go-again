@@ -1,9 +1,8 @@
 <template>
   <v-app>
+    <LogoBar></LogoBar>
     <v-main>
-      <v-container>
-        <LogoBar/>
-      </v-container>
+      <CarCards :cars="allCars"></CarCards>
     </v-main>
   </v-app>
 </template>
@@ -12,6 +11,7 @@
 // IMPORT
 import axios from 'axios';
 import LogoBar from '@/components/LogoBar.vue';
+import CarCards from '@/components/CarCards.vue';
 
 export default {
   name: 'App',
@@ -21,6 +21,7 @@ export default {
 
   components: {
     LogoBar,
+    CarCards,
   },
 
   methods: {
@@ -32,6 +33,8 @@ export default {
       } catch (error) {
         console.error(error);
       }
+      // @refresh="getCars()"
+      // Um die daten zu refreshen
     },
   },
 
