@@ -6,7 +6,7 @@
       flat
       tile
     >
-      <div v-for="car in cars" :key="car.id" outlined tile class="ma-3">
+      <div v-for="car in cars" :key="car.id" outlined tile class="ma-3 ">
         <CarCard :car="car" />
         <!-- @buycar="buyCar($event)" -->
       </div>
