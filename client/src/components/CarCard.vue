@@ -26,7 +26,7 @@
     </div>
 
     <v-card-actions>
-      <v-btn color="white" class="red" text @click="$emit('buycar', car)">
+      <v-btn color="white" class="red" text @click="$emit('buy', car)">
         Buy car
       </v-btn>
     </v-card-actions>

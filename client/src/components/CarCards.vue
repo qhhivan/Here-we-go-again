@@ -1,14 +1,11 @@
 <template>
-  <div>
+  <div class="mx-5">
     <div
       class="d-flex flex-wrap mb-6 justify-center align-stretch"
       color="grey lighten-2"
-      flat
-      tile
     >
       <div v-for="car in cars" :key="car.id" outlined tile class="ma-3 ">
-        <CarCard :car="car" />
-        <!-- @buycar="buyCar($event)" -->
+        <CarCard :car="car" @buy="buyACar($event)" />
       </div>
     </div>
   </div>
@@ -26,7 +23,7 @@ export default {
 
   data: () => ({}),
   methods: {
-    async buyCar(car) {
+    async buyACar(car) {
       try {
         await axios({
           url: `http://127.0.0.1:3000/cars/${car.id}`,
@@ -36,8 +33,8 @@ export default {
             title: `${car.title} RESERVED`,
           },
         });
-        console.log(car);
-        // return this.$emit('refresh', true);
+        return this.$emit('akt', true);
+        // console.log(car);
       } catch (error) {
         console.error(error);
       }

@@ -2,7 +2,7 @@
   <v-app>
     <LogoBar></LogoBar>
     <v-main>
-      <CarCards :cars="allCars"></CarCards>
+      <CarCards :cars="allCars" @akt="getCars()"></CarCards>
     </v-main>
   </v-app>
 </template>
@@ -33,8 +33,6 @@ export default {
       } catch (error) {
         console.error(error);
       }
-      // @refresh="getCars()"
-      // Um die daten zu refreshen
     },
   },
 
